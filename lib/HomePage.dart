@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:playground/abstract_factory.dart';
 import 'package:playground/flutter_factory_method.dart';
 
 class Homepage extends StatefulWidget {
@@ -16,13 +17,18 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-              PlatformButton(TargetPlatform.android).build((){
-                print("Android Button Clicked");
-              }, Text("Click")),
+            //   PlatformButton(TargetPlatform.android).build((){
+            //     print("Android Button Clicked");
+            //   }, Text("Click")),
+            //
+            // PlatformButton(TargetPlatform.iOS).build((){
+            //   print("iOS Button Clicked");
+            // }, Text("Click"))
 
-            PlatformButton(TargetPlatform.iOS).build((){
-              print("iOS Button Clicked");
-            }, Text("Click"))
+            AbstractFactoryImpl().buildButton(context, "Hello", (){}),
+            SizedBox(height: 5,),
+            AbstractFactoryImpl().buildIndicator(context)
+
           ],
         ),
       ),
