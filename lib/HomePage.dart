@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:playground/abstract_factory.dart';
+import 'package:playground/adaptar/adaptar.dart';
 import 'package:playground/flutter_factory_method.dart';
 
 class Homepage extends StatefulWidget {
@@ -10,6 +11,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final PostAPI postAPI = PostAPI();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +28,22 @@ class _HomepageState extends State<Homepage> {
             //   print("iOS Button Clicked");
             // }, Text("Click"))
 
-            AbstractFactoryImpl().buildButton(context, "Hello", (){}),
-            SizedBox(height: 5,),
-            AbstractFactoryImpl().buildIndicator(context)
+            // AbstractFactoryImpl().buildButton(context, "Hello", (){}),
+            // SizedBox(height: 5,),
+            // AbstractFactoryImpl().buildIndicator(context)
 
+            Expanded(
+              child: ListView.builder(
+                itemCount: postAPI.getPosts().length,
+                itemBuilder: (context, index) {
+                  final posts = postAPI.getPosts()[index];
+                  return ListTile(
+                    title: Text(posts.title),
+                    subtitle: Text(posts.bio),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
