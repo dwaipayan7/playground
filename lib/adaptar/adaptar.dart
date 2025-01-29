@@ -38,6 +38,7 @@ abstract class IPostAPI {
   List<Post> getPosts();
 }
 
+//model
 class Post {
   final String title;
   final String bio;

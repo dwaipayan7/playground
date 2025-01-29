@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:playground/abstract_factory.dart';
 import 'package:playground/adaptar/adaptar.dart';
 import 'package:playground/flutter_factory_method.dart';
+import 'package:playground/prototype/immutable_prototype.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -15,6 +16,19 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
+    Person person = const Person(
+      name: "Dwaipayan",
+      lastName: "Biswas",
+      age: 22,
+      nation: "IN",
+      email: "biswasdwai007@gmail.com",
+    );
+
+    Person person1 = person.clone();
+
+    print(person1.name);
+    print(person.name);
+
     return Scaffold(
       body: Center(
         child: Column(
