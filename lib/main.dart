@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:playground/HomePage.dart';
 import 'package:playground/factory_method.dart';
+import 'package:playground/singleton/singleton.dart';
 
 void main() {
   // Employee employee = Employee(EmployeeType.programmer);
@@ -15,6 +16,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    // Singleton1.getInstance();
+    // Singleton1 singleton2 = Singleton1.getInstance();
+    // Singleton1 singleton3 = Singleton1.getInstance();
+    // Singleton1 singleton4 = Singleton1.getInstance();
+
+    Singleton1 singleton1 = Singleton1();
+    Singleton1 singleton2 = Singleton1();
+    Singleton1 singleton3 = Singleton1();
+    Singleton1 singleton4 = Singleton1();
+
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Playground',
