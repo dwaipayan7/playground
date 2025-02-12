@@ -16,18 +16,33 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
-    Person person = const Person(
+    // Person person = const Person(
+    //   name: "Dwaipayan",
+    //   lastName: "Biswas",
+    //   age: 22,
+    //   nation: "IN",
+    //   email: "biswasdwai007@gmail.com",
+    // );
+    //
+    // Person person1 = person.clone();
+    //
+    // print(person1.name);
+    // print(person.name);
+
+    Person person = Person(
       name: "Dwaipayan",
       lastName: "Biswas",
       age: 22,
-      nation: "IN",
-      email: "biswasdwai007@gmail.com",
+      nation: 'IN',
+      email: 'biswasdwai007@gmail.com',
     );
+
 
     Person person1 = person.clone();
 
-    print(person1.name);
+
     print(person.name);
+    print(person1.name);
 
     return Scaffold(
       body: Center(
